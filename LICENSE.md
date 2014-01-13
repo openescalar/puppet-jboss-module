@@ -1,8 +1,3 @@
-puppet-jboss-module
-===================
-
-Deploy and configure jboss server
-
 Copyright 2014 Miguel Zuniga ( miguel-zuniga at hotmail.com )
 
 Licensed under the Apache License, Version 2.0 (the "License");

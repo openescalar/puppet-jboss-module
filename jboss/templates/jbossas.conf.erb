@@ -1,0 +1,62 @@
+# System-wide configuration file for jbossas services
+# This will be sourced by jbossas and any secondary service
+# Values will be overridden by service-specific configuration
+# files in /etc/sysconfig
+# Use this one to change default values for all services
+# Change the service specific ones to affect only one service
+# (see, for instance, /etc/sysconfig/jbossas)
+#
+# To change a setting, uncomment the line and set the value for what you want
+# The values in the comments are the default values, shown here for convenience
+#
+JAVA_HOME=<%= $javapath %>
+#
+##define where jboss is - this is the directory containing directories log, bin, conf etc
+#JBOSS_HOME="/var/lib/jbossas"
+#
+##make sure java is on your path
+JAVAPATH="<%= $javapath %>/bin"
+#
+##define the classpath for the shutdown class
+##JBOSSCP=
+#
+##define jboss configuration to start
+#JBOSSCONF="production"
+#
+##define the script to use to start jboss
+##JBOSSSH="$JBOSS_HOME/bin/run.sh -c $JBOSSCONF"
+#
+##define what will be done with the console log
+#JBOSS_CONSOLE="$JBOSS_HOME/server/$JBOSSCONF/log/console.log"
+JBOSS_CONSOLE="/dev/null"
+#
+##define the user under which jboss will run, or use RUNASIS to run as the current user
+#JBOSSUS="jboss"
+#
+##define the group under which jboss will run
+#JBOSSGR="jboss"
+#
+##define the jgroups UDP group (multicast address) for clustering
+#JBOSS_UDP_GROUP="228.1.2.3"
+#
+#define the Http Session Replication UDP port (multicast)
+#JBOSS_UDP_PORT_WP="45577"
+#
+#define the UDP port for JBoss clustering (multicast)
+#JBOSS_UDP_PORT_HA="45566"
+#
+#define the UDP port for the ejb3 entity cache cluster (multicast)
+#JBOSS_UDP_PORT_EJB3="43333"
+#
+#define the UDP port for ejb3 sfsb cache cluster (multicast)
+#JBOSS_UDP_PORT_EJB3SFSB="45551"
+#
+##define the timeout period for starting the server
+#JBOSS_START_TIMEOUT="150"
+#
+##define the timeout period for stopping the server
+JBOSS_STOP_TIMEOUT="10"
+#
+##define the ip to which the server should bind to
+JBOSS_IP=<%= $jbossip %>
+
